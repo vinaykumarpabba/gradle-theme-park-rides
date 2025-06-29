@@ -1,5 +1,9 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 
+plugins {
+    id 'base'
+}
+
 tasks.register('generateDescriptions', Copy) {
     from 'descriptions'
     into "$buildDir/descriptions"
