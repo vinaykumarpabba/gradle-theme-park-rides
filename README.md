@@ -14,6 +14,10 @@
 - `gradle --help` which is different from `gradle help` will show the command line options available for Gradle.
 - `gradle gD --info` will run the `generateDescriptions` task with additional logging information. `gradle --info gD` will also work.
 - `--console` has different options like `plain`, `rich`, and `auto`. `--console=plain` will show the output in plain text without any formatting. `--console=rich` will show the output with colors and formatting. `--console=auto` will automatically choose the best option based on the terminal capabilities. `./gradlew gD --console=verbose`
-- 
-- 
-- 
+
+
+- Build life cycle: 
+  - Initialization: Gradle determines which projects are going to take part in the build. Executes the `settings.gradle` file.
+  - Configuration: Gradle configures the projects and tasks that will be executed. Gradle learns about the tasks and their dependencies. This is where the `build.gradle` files are executed. Builds in-memory model of the project is created.
+  - Execution: Gradle executes the tasks that were configured in the previous step. The tasks themselves are executed in the order they were configured. This is where the actual work is done.
+

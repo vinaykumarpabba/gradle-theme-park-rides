@@ -1,3 +1,4 @@
 
 rootProject.name = 'theme-park-rides'
 
+println "Initializing settings for theme-park-rides project. Executed during the initialization phase."

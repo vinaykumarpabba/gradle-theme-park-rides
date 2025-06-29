@@ -5,8 +5,19 @@ plugins {
 }
 
 //defaultTasks 'generateDescriptions'
+println "Running build script for Theme Park. This is executed during the configuration phase."
 
 tasks.register('generateDescriptions', Copy) {
+
+    doFirst {
+        println "Preparing to generate descriptions for theme park rides. This is executed during the configuration phase."
+    }
+    doLast {
+        println "Generating descriptions for theme park rides. This is executed during the execution phase."
+    }
+
+    println "Inside the generateDescriptions task configuration block. This is executed during the configuration phase."
+
     group 'Theme Park'
     description 'Generates descriptions including token substitutes'
     from 'descriptions'
