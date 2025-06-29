@@ -9,3 +9,9 @@ tasks.register('generateDescriptions', Copy) {
     into "$buildDir/descriptions"
     filter (ReplaceTokens, tokens: [THEME_PARK_NAME: "Grelephant's Wonder World"])
 }
+
+tasks.register('zipDescriptions', Zip) {
+    from "descriptions"
+    destinationDirectory = file("$buildDir/distributions")
+    archiveFileName = 'descriptions.zip'
+}
