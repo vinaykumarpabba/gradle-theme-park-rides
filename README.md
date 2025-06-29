@@ -20,4 +20,11 @@
   - Initialization: Gradle determines which projects are going to take part in the build. Executes the `settings.gradle` file.
   - Configuration: Gradle configures the projects and tasks that will be executed. Gradle learns about the tasks and their dependencies. This is where the `build.gradle` files are executed. Builds in-memory model of the project is created.
   - Execution: Gradle executes the tasks that were configured in the previous step. The tasks themselves are executed in the order they were configured. This is where the actual work is done.
+- `./gradlew gD --info` log output is in three different phases.
+- The `up-to-date` message during the execution phase indicates that the task has already been executed and its outputs are still valid, so it will not be executed again.
+
+- There is also some stuff about the `Gradle Daemon` which is a long-running process that can speed up the build process by keeping the Gradle runtime in memory. It is started automatically when you run a Gradle command and will be reused for subsequent commands. You can stop the daemon with `./gradlew --stop`. Helps with faster builds by avoiding the overhead of starting a new JVM for each build.
+- 
+- We can also debug tasks from the command line using `--debug` option. This will provide detailed information about the task execution and can help in troubleshooting issues. Or using Intellij IDEA, we can run the Gradle task in debug mode by clicking on the debug icon next to the task in the Gradle tool window. This will allow us to set breakpoints and step through the code.
+- 
 
