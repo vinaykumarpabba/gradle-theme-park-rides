@@ -7,4 +7,13 @@
 - `gradle projects` will list all the projects in the build.
 - `gradle tasks` will list all the tasks available in the build. There are different groups of tasks. `Build Setup tasks`, `Help tasks`, etc.
 - `generateDescriptions` and `zipDescriptions` are not part of any group. `gradle tasks --all` will show all tasks including those not in any group.
+- We can run multiple tasks by separating them with a space, e.g., `gradle generateDescriptions zipDescriptions`.
+- When we run `./gradlew`, it runs the `help` default task. We can customize this by specifying a different default task in the `build.gradle` file. `defaultTasks 'generateDescriptions'` will set `generateDescriptions` as the default task.
+- We can also specify a part of the task name to run. For example, `gradle h` will run the `help` task. `gradle gD for generateDescriptions` will run the `generateDescriptions` task.
+- command line arguments. 
+- `gradle --help` which is different from `gradle help` will show the command line options available for Gradle.
+- `gradle gD --info` will run the `generateDescriptions` task with additional logging information. `gradle --info gD` will also work.
+- `--console` has different options like `plain`, `rich`, and `auto`. `--console=plain` will show the output in plain text without any formatting. `--console=rich` will show the output with colors and formatting. `--console=auto` will automatically choose the best option based on the terminal capabilities. `./gradlew gD --console=verbose`
+- 
+- 
 - 

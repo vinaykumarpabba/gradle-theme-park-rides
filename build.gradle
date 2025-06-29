@@ -4,6 +4,8 @@ plugins {
     id 'base'
 }
 
+//defaultTasks 'generateDescriptions'
+
 tasks.register('generateDescriptions', Copy) {
     group 'Theme Park'
     description 'Generates descriptions including token substitutes'
